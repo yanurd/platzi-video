@@ -1,0 +1,48 @@
+@import '../Vars.scss';
+
+.carousel-item {
+  background-color: tomato;
+  width: 200px;
+  height: 250px;
+  border-radius: 20px;
+  overflow: hidden;
+  margin-right: 10px;
+  display: inline-block;
+  cursor: pointer;
+  transition: 450ms all;
+  transform-origin: center left;
+  position: relative;
+}
+.carousel-item:hover ~ .carousel-item{
+  transform: translate3d(100px, 0, 0);
+}
+
+.carousel-item__img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+}
+.carousel-item__details {
+  background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0) 100%);
+  font-size: 10px;
+  opacity: 0;
+  transition: 450ms opacity;
+  padding: 10px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  display: grid;
+  align-items: flex-end;
+  align-content: flex-end;
+  color: white;
+  font-family: $theme-font;
+}
+.carousel-item__details:hover {
+  opacity: 1;
+  // display: grid;
+  // align-items: end;
+  // align-content: flex-end;
+  // text-decoration-color: white;
+}

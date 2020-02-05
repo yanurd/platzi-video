@@ -8,7 +8,7 @@ import plusButton from '../assets/static/plus-icon.png';
 import deleteButton from '../assets/static/remove-icon.png';
 
 const CarouselItem = (props) => {
-  const { id, cover, title, year, contentRating, duration } = props;
+  const { id, cover, title, year, contentRating, duration, isList } = props;
   //funcion que maneja el guardado a favoritos
   const handleSetFavorite = () => {
     props.setFavorite({
@@ -29,16 +29,22 @@ const CarouselItem = (props) => {
       <div className='carousel-item__details'>
         <div>
           <img src={playButton} alt='Reproducir' />
-          <img
-            src={plusButton}
-            alt='Mas'
-            onClick={handleSetFavorite}
-          />
-          <img
-            src={deleteButton}
-            alt='Eliminar favorito'
-            onClick={() => handleDeleteFavorite(id)}
-          />
+          {//verifico si se encuentra en la lista de favoritos
+          //para asi poder enseñarle el boton de eliminar favorito
+            isList ? (
+              <img
+                src={deleteButton}
+                alt='Eliminar favorito'
+                onClick={() => handleDeleteFavorite(id)}
+              />
+            ) : (
+              <img
+                src={plusButton}
+                alt='Mas'
+                onClick={handleSetFavorite}
+              />
+            )
+          }
         </div>
         <p className='carousel-item__details--modificador'>{title}</p>
         <p className='carousel-item__details--subtitle'>

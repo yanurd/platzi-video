@@ -46,3 +46,22 @@
   // align-content: flex-end;
   // text-decoration-color: white;
 }
+.carousel-item__details--img {
+  width: 20px;
+  margin: 0 4px 0 0;
+}
+
+.carousel-item:hover .carousel-item__details {
+  opacity: 1;
+}
+
+.carousel-item__details--title {
+  color: white;
+  margin: 5px 0px 0px 0px;
+}
+
+.carousel-item__details--subtitle {
+  color: white;
+  font-size: 8px;
+  margin: 3px 0px;
+}
